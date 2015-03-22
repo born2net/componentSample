@@ -124,11 +124,11 @@ gulp.task('rsync', function (done) {
 var common = {
     1: {
         s: '/cygdrive/c/msweb/common/utils/',
-        d: '/cygdrive/c/msweb/componentSample/utils/'
+        d: localDir + '/utils/'
     },
     2: {
         s: '/cygdrive/c/msweb/common/node_modules/',
-        d: '/cygdrive/c/msweb/componentSample/node_modules/'
+        d: localDir + '/node_modules/'
     }
 };
 

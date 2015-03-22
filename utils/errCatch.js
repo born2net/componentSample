@@ -1,5 +1,5 @@
 /**
- Catch all app errors
+ Catch all application errors
  **/
 window.onerror = function (msg, url, line, col, error) {
     if (window.debug == undefined || window.debug) {
