@@ -118,6 +118,9 @@ gulp.task('rsync', function (done) {
     });
 });
 
+/******************************************
+ Copy common libs
+ ******************************************/
 var common = {
     1: {
         s: '/cygdrive/c/msweb/common/utils/',
@@ -127,7 +130,6 @@ var common = {
         s: '/cygdrive/c/msweb/common/node_modules/',
         d: '/cygdrive/c/msweb/componentSample/node_modules/'
     }
-
 };
 
 gulp.task('commonRsync', function (done) {
@@ -135,12 +137,10 @@ gulp.task('commonRsync', function (done) {
         var s = common[i]['s'];
         var d = common[i]['d'];
         console.log('copying files from ' + s + ' to ' + d)
-
         var rsync = Rsync.build({
             source: s,
             destination: d
         });
-
         //rsync.delete(); // delete files on destination that do not exist in source
         rsync.set('progress');
         rsync.flags('avz');
