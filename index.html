@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FREE Digital Signage http://www.digitalsignage.com">
+    <meta name="author" content="MediaSignage Inc.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>SignageStudio Lite</title>
+    <link href="css/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <link href="js/common/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script>
+        window.debug = 1;
+    </script>
+    <script type="text/javascript" src="utils/xml2json.js"></script>
+    <script type="text/javascript" src="utils/playerLoad.js"></script>
+    <script type="text/javascript" src="utils/errCatch.js"></script>
+    <script type="text/javascript" src="bridge/As3JsBridge.js"></script>
+    <script data-main="init" src="js/common/requirejs/require.js" type="text/javascript"></script>
+</head>
+<body class="noSlider bgColor">
+<div id="loadingContainer" class="container-fluid whiteBg noSlider" style="display: none">
+    <center>
+        <h1>Loading...</h1>
+        <img src="http://signage.me/components/sample/assets/preload6.gif"/>
+    </center>
+</div>
+<div id="sampleContainer" class="noSlider container-fluid bgColor" style="display: none">
+    <div class="container noSlider container-pad bgColor" id="property-listings">
+        <div class="row noSlider bgColor">
+            <div style="float: right">
+                <button id="fireNextEvent" class="btn">go to next</button>
+
+            </div>
+            <div>
+                <h2>image from resources</h2>
+                <img id="imageFromResource" class="img" style="width: 134px; height: 95px"/><br/>
+                <h2>image from url</h2>
+                <img id="imageFromURL" class="img" style="width: 134px; height: 95px"/><br/>
+            </div>
+            <hr/>
+            <span id="consoleLog"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

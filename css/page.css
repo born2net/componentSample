@@ -1,0 +1,109 @@
+* {
+    font-size: 12px;
+}
+
+.bolding {
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+input {
+    font-size: 11px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 2px !important;
+    border: 1px solid #c6c6c6;
+    outline:0;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+button {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+button .fa {
+    font-size: 13px;
+    color: #424242 !important;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #d1d1d1;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+img {
+    border: 1px black dashed;
+    width:100px;
+    height:70px
+}
+
+.radioButtons span {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: -3px;
+}
+
+.etabs {
+    margin: 0;
+    padding: 0;
+}
+
+.tab {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    background: #eee;
+    border: solid 1px #999;
+    border-bottom: none;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+}
+
+.tab a {
+    font-family: arial, sans-serif;
+    font-size: 12px;
+    color: #424242;
+    line-height: 2em;
+    display: block;
+    padding: 0 10px;
+    outline: none;
+    text-decoration: none !important;
+}
+
+.tab a:hover {
+}
+
+.tab.active {
+    background: #fff;
+    padding-top: 6px;
+    position: relative;
+    top: 1px;
+    border-color: #666;
+    text-decoration: none !important;
+}
+
+.tab a.active {
+    font-weight: bold;
+    text-decoration: none;
+
+}
+
+.tab-container .panel-container {
+    background: #fff;
+    border: solid #666 1px;
+    padding: 10px;
+    margin-right: 20px;
+    -moz-border-radius: 0 4px 4px 4px;
+    -webkit-border-radius: 0 4px 4px 4px;
+}
+
+.panel-container {
+    margin-bottom: 10px;
+}

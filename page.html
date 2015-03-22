@@ -1,0 +1,60 @@
+<html>
+<head>
+    <script>
+        window.debug = 1;
+    </script>
+    <script type="text/javascript" src="bridge/As3JsBridge.js"></script>
+    <script type="text/javascript" src="utils/xml2json.js"></script>
+    <script type="text/javascript" src="js/common/jq/jq1.9.1.js"></script>
+    <script type="text/javascript" src="utils/jquery.easytabs.js"></script>
+    <script type="text/javascript" src="js/common/underscore/underscore.js"></script>
+    <script type="text/javascript" src="js/common/backbone/backbone.js"></script>
+    <script type="text/javascript" src="utils/errCatch.js"></script>
+    <script type="text/javascript" src="js/studioApp.js"></script>
+    <link href="css/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/page.css" rel="stylesheet">
+</head>
+
+
+<body style="margin-left:10px;">
+<h1 style="padding: 20px 20px 20px 0">Sample settings</h1>
+
+<div id="tab-container" class='tab-container'>
+    <ul class='etabs'>
+        <li class='tab'><a href="#tabs1">Settings</a></li>
+        <li class='tab'><a href="#tabs2">Drag over</a></li>
+        <li class='tab'><a href="#tabs3">remote url</a></li>
+    </ul>
+    <div class='panel-container'>
+        <div id="tabs1">
+            <label class="bolding">Background Color</label>
+            <input id="bgColor" type="text" style="width:100px;"/>
+            <hr/>
+            <div style="clear: both"></div>
+            <button id="showSavedData">Show html save data</button>
+            <hr/>
+            <button id="pickRandom">Pick a random image</button>
+            <p/>
+            <img id="img3"/>
+
+        </div>
+        <div id="tabs2">
+            <h2>Drag resource on top of target</h2>
+            <div id="draggedImages">
+                <img id="img1" name="1" ondragover="preventDefault(event)" onDrop="drop(event)"/>
+                <img id="img2" name="2" ondragover="preventDefault(event)" onDrop="drop(event)"/>
+            </div>
+        </div>
+        <div id="tabs3">
+            <h2>remote resources</h2>
+            <span class="bolding">url path:</span>
+            <input id="remoteUrl" type="text" style="width: 100px"/>
+            <br/>
+            <img id="img4" style="margin-left: 50px"/>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

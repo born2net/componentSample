@@ -1,0 +1,154 @@
+<html>
+<head>
+    <script type="text/javascript" src="../bridge/As3JsBridge.js"></script>
+    <script type="text/javascript" src="../utils/xml2json.js"></script>
+    <script type="text/javascript" src="../js/common/jq/jq1.9.1.js"></script>
+    <script>
+
+        window.onerror = function (errorMsg, url, lineNumber) {
+            alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber);
+        }
+    </script>
+    <link href="../_css/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../page.css" rel="stylesheet">
+</head>
+
+<body style="margin-left:10px;">
+<div>
+    <span class="bolding">Text:</span>
+    <input id="t1" type="text"/><br/>
+    <span class="bolding">Resource:</span>
+    <input id="t4" type="text"/>
+
+
+    <img id="img1" style="width:100px;height:70px" ondragover="preventDefault(event)" onDrop="drop(event)">
+    <img id="img2" style="width:100px;height:70px">
+    <button onclick="onUrl()">url</button>
+    <br/>
+    <hr/>
+    <input id="eventName" type="text" style="width:40px;"/>
+    <input id="commandName" type="text" style="width:40px;"/>
+    <input id="commandParams" type="text" style="width:40px;"/>
+    <hr/>
+</div>
+
+<h1 style="padding: 20px 20px 20px 0">Digg settings</h1>
+<label class="bolding">Background Color</label>
+<input id="bgColor" type="text" style="width:100px;"/>
+<hr/>
+<label class="bolding" style="float: left">Scroll Speed</label>
+
+<div class="radioButtons" style="float: left; position: relative; top: -3px; left: 30px">
+    <input type="radio" name="speed" class="bolding" value="slow"><span>slow</span>
+    <br/>
+    <input type="radio" name="speed" value="medium"><span>medium</span>
+    <br/>
+    <input type="radio" name="speed" value="fast"><span>fast</span>
+    <br/>
+</div>
+<p/>
+
+<div style="clear: both">
+    <button onclick="onAddEvent()">Add</button>
+    <button onclick="onDeleteEvent()">Delete
+        <i class="fa fa-times-circle"></i>
+    </button>
+    <br/>
+    <input id="events" type="text"/><br/>
+</div>
+<script>
+
+    function onUrl() {
+        alert('onUrl');
+        document.getElementById('img2').src = document.getElementById('t4').value;
+    }
+
+    function preventDefault(event) {
+        event.preventDefault();
+    }
+
+
+    var hResource = 0;
+
+    function drop(ev) {
+        alert('drop');
+        ev.preventDefault();
+        var str = getDragData();
+        var data = JSON.parse(str);
+        var d0 = data[0];
+        var resource = d0.Resource;
+        m_hRsource = parseInt(resource.hResource);
+        getObjectValue(0, 'getResourcePath(' + m_hRsource + ')', function (b) {
+            document.getElementById('img1').src = JSON.parse(b);
+        });
+    }
+
+    function onAddEvent() {
+        alert('addOnEve');
+        getObjectValue(0, 'addEvent("' + document.getElementById('eventName').value + '","' + document.getElementById('commandName').value + '","' + document.getElementById('commandParams').value + '")', function (b) {
+        });
+    }
+
+    function onDeleteEvent() {
+        alert('DelOnEve');
+        getObjectValue(0, 'removeEventAt(0)', function (b) {
+        });
+    }
+
+
+    var x2js = new X2JS();
+
+
+    var m_data = {}
+    var m_hRsource = -1;
+
+    function setData(i_xmlData) {
+        alert(i_xmlData);
+        m_data = x2js.xml_str2json(i_xmlData);
+        if (m_data.Data._bgColor != null) {
+            document.getElementById('bgColor').value = m_data.Data._bgColor;
+        }
+        if (m_data.Data._a != null) {
+            document.getElementById('t1').value = m_data.Data._a;
+        }
+        if (m_data.Data.ExtImg != null) {
+            document.getElementById('t4').value = m_data.Data.ExtImg._url;
+            document.getElementById('img2').src = m_data.Data.ExtImg._url;
+        }
+        if (m_data.Data.Resource != null) {
+            m_hRsource = m_data.Data.Resource._hResource;
+            getObjectValue(0, 'getResourcePath(' + m_hRsource + ')', function (b) {
+                document.getElementById('img1').src = JSON.parse(b);
+
+                getObjectValue(0, 'getAllEvents()', function (c) {
+                    document.getElementById('events').value = JSON.stringify(c);
+                })
+            });
+        }
+
+    }
+
+    function getData() {
+        alert('get data');
+        m_data = {Data: {}};
+        m_data.Data._bgColor = document.getElementById('bgColor').value;
+        m_data.Data._a = document.getElementById('t1').value;
+
+        if (m_hRsource != -1) {
+            m_data.Data.Resource = {};
+            m_data.Data.Resource._hResource = m_hRsource;
+        }
+        m_data.Data.ExtImg = {};
+        m_data.Data.ExtImg._url = document.getElementById('t4').value;
+
+        return x2js.json2xml_str(m_data);
+    }
+
+
+    $(document).ready(function () {
+        alert('ready');
+    });
+
+</script>
+</body>
+</html>

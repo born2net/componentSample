@@ -1,0 +1,41 @@
+{
+  "name": "gulp-header-footer-gen",
+  "main": "./gulp-header-footer-gen.js",
+  "version": "0.0.10",
+  "description": "create html pages using a template's header and footer.",
+  "keywords": [
+    "gulpplugin",
+    "html template",
+    "html dreamweaver template",
+    "replace",
+    "header",
+    "footer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/born2net/gulp-header-footer-gen"
+  },
+  "author": {
+    "name": "Sean Levy",
+    "email": "born2net@gmail.com",
+    "url": "http://www.javascriptninja.io/"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "engines": {
+    "node": ">= 0.9"
+  },
+  "dependencies": {
+    "through2": "^0.6.1"
+  },
+  "devDependencies": {
+    "event-stream": "^3.1.7",
+    "gulp-util": "^3.0.0"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "bugs": {
+    "url": "https://github.com/born2net/gulp-header-footer-gen/issues"
+  }
+}
