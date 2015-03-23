@@ -1,10 +1,12 @@
+var debug = 0;
+var remote_ip = '127.0.0.1';
+
 function includeJS(incFile)
 {
     document.write('<script type="text/javascript" src="' + incFile+ '"></scr' + 'ipt>');
 }
 
-
-function QSHandler() 
+function QSHandler()
 {
   var qs=location.search.substr(1).split("&");
   this.data=[];

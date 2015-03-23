@@ -4,9 +4,8 @@ var appId = gui.App.argv[0];
 var port = gui.App.argv[1];
 var net = require('net');
 var client = new net.Socket();
+var remote_ip = remote_ip || '127.0.0.1';
 
-
-// AS3 to JS
 var buffer = "";
 client.on('data', function (data) {
     try {
@@ -86,7 +85,6 @@ function callback(i_data) {
     delete callbackMap[i_data.fncIndex];
 }
 
-// 192.168.81.128
-client.connect(port, '127.0.0.1', function () {
+client.connect(port, remote_ip, function () {
     client.write('{"appId":"' + appId + '"}');
 });

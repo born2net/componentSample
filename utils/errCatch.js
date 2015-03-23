@@ -11,7 +11,7 @@ window.onerror = function (msg, url, line, col, error) {
     }
 };
 /**
- Display all errors
+ Override the log to display messages via alert
  **/
 window.log = function (msg) {
     if (window.debug)
