@@ -4,7 +4,8 @@ DigitalSignage: Sample Component
 open source digital signage HTML SDK
 ---
 
-The sample component enables anyone to develop a custom Digital Signage component for the free SignagePlayer from http://digitalsignage.com.
+The sample component enables anyone to develop a custom Digital Signage component that consists of both a SignagePlayer Javascript module as well as 
+Javascript / HTML StudioPro properties page module for the free SignagePlayer from http://digitalsignage.com.
 
 Player component:
 ----
