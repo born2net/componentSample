@@ -1,5 +1,8 @@
-Sample Component for FREE Digital Signage
+DigitalSignage: Sample Component
 ===
+
+open source digital signage HTML SDK
+---
 
 The sample component enables anyone to develop a custom Digital Signage component for the free SignagePlayer from http://digitalsignage.com.
 
