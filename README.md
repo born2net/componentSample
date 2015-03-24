@@ -4,8 +4,8 @@ DigitalSignage: Sample Component
 open source digital signage HTML SDK
 ---
 
-The sample component enables anyone to develop a custom Digital Signage component that consists of both a SignagePlayer Javascript module as well as 
-Javascript / HTML StudioPro properties page module for the free SignagePlayer from http://digitalsignage.com.
+The sample component enables anyone to develop a custom Digital Signage component that consists of both a SignagePlayer HTML / CSS / Javascript module as well as 
+StudioPro properties page HTML / CSS / Javascript module, for the free SignagePlayer from http://digitalsignage.com.
 
 Player component:
 ----
@@ -90,6 +90,11 @@ if set to false, the component will run in the embedded HTML wrapper in Windows 
 - debug: when set to desktopUseNode: true, the debug mode allows for remote debugging of the Player component in windows
  using node web kit.
 
+Tutorial
+-----
+**For a full demonstration on how to build, deploy and use the open source SignagePlayer and StudioPro components be sure to view the following video tutorials:**
+[Visit GitHub!](www.github.com)
+[Visit GitHub!](www.github.com)
 
 
 
