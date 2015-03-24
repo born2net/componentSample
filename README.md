@@ -4,7 +4,7 @@ DigitalSignage: Sample Component
 open source digital signage HTML SDK
 ---
 
-The sample component enables anyone to develop a custom Digital Signage component that consists of both a SignagePlayer HTML / CSS / Javascript module as well as 
+The component enables anyone to develop a custom Digital Signage component that consists of both a SignagePlayer HTML / CSS / Javascript module as well as 
 StudioPro properties page HTML / CSS / Javascript module, for the free SignagePlayer from http://digitalsignage.com.
 
 Player component:
@@ -63,13 +63,13 @@ HTML wrapper comparison
 
 Configuration
 -----
-sample.json (rename to your_app_name.json) consists of the configuration used to setup your Studio and Player component.  
+your_app_name.json includes the configuration used to setup your Studio and Player component.  
 
 ```
 {
-  "name": "sample",
+  "name": "your_app_name",
   "version": "1.0.457",
-  "url": "http://signage.me/components/sample/sample.zip",
+  "url": "http://signage.me/components/your_app_name/your_app_name.zip",
   "property": "page.html",
   "desktopUseNode": false,
   "debug": false
