@@ -93,8 +93,11 @@ if set to false, the component will run in the embedded HTML wrapper in Windows 
 Tutorial
 -----
 **For a full demonstration on how to build, deploy and use the open source SignagePlayer and StudioPro components be sure to view the following video tutorials:**
-[Visit GitHub!](www.github.com)
-[Visit GitHub!](www.github.com)
+
+- [Development environment](http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=50)
+- [HTML5 component development part1](http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=50)
+- [HTML5 component development part2](http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=50)
+
 
 
 
