@@ -46,7 +46,8 @@ HTML wrapper comparison
       1. super fast HTML rendering powered by latest Google Chromium release
       2. full access to the host file system and devices (no security limitations)
       3. most efficient memory management since runs as an external process
-      4. fully integrated into the SignagePlayer for windows (nw.exe), runs with no toolbar (clean window) 
+      4. fully integrated into the SignagePlayer for windows (nw.exe)
+         runs with no toolbar (clean window) 
    HTML Cons:
       1. does not support layering (always on top)
       2. only runs on SignagePlayer for windows
