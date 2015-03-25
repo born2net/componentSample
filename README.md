@@ -30,6 +30,7 @@ Your custom Player component that runs inside the SignagePlayer can execute unde
 2. Android: Use only the native default built in HTML browser on the underline Android device
 3. Mac: HTML mode only
 
+<pre>
 HTML wrapper comparison
    
    HTML Pros:
@@ -58,6 +59,8 @@ HTML wrapper comparison
       1. runs as fast (or as slow) as the default Android default browser
       2. does not support layering
       3. operates under standard HTML security box            
+
+</pre>
 
 - Studio component: runtime Javascript module which lives inside the StudioPro as a properties and settings page
 
