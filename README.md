@@ -98,9 +98,9 @@ Tutorial
 -----
 **For a full demonstration on how to build, deploy and use the open source SignagePlayer and StudioPro components be sure to view the following video tutorials:**
 
-- [Development environment](http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=50)
-- [HTML5 component development part1](http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=50)
-- [HTML5 component development part2](http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=50)
+- [HTML5 component development Intro](http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=htmlSdkIntro)
+- [HTML5 component development API](http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=htmlSdkAPI)
+- [HTML5 component development Debug/setup](http://www.digitalsignage.com/_html/video_tutorials.html?videoNumber=htmlSdkDebug)
 
 
 
