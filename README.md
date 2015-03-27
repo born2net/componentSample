@@ -94,7 +94,7 @@ if set to false, the component will run in the embedded HTML wrapper in Windows 
 - debug: when set to desktopUseNode: true, the debug mode allows for remote debugging of the Player component in windows
  using node web kit.
 
-Tutorial
+Tutorials
 -----
 **For a full demonstration on how to build, deploy and use the open source SignagePlayer and StudioPro components be sure to view the following video tutorials:**
 
