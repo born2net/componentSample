@@ -52,7 +52,7 @@ define(['jquery', 'backbone', 'text!templates/DiggArticle.html', 'TweenLite', 'S
                             // alert(imgSrc);
                             $(Elements.IMAGE_FROM_RESOURCE).attr('src', imgSrc);
                         });
-                    }, 1000);
+                    }, 3000);
                 }
 
                 if (!_.isUndefined(self.m_jData.Resource) && _.isUndefined(self.m_jData.Resource['hResource1'])) {
