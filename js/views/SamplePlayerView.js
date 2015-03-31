@@ -41,22 +41,32 @@ define(['jquery', 'backbone', 'text!templates/DiggArticle.html', 'TweenLite', 'S
          Of course you can achieve better serial loading with libraries such as async (https://github.com/caolan/async).
          @method _loadImages
          **/
+
         _loadImages: function () {
             try {
                 var self = this;
-                if (_.isUndefined(self.m_jData.Resource) || _.isUndefined(self.m_jData.Resource._hResource1))
-                    return;
-                var hResource = parseInt(self.m_jData.Resource._hResource1);
-                getObjectValue(0, 'getResourcePath("' + hResource + '")', function (itemSrc) {
-                    self._log('image path: ' + itemSrc);
-                    // itemSrc = itemSrc.replace(/"/,'');
-                    //var a = JSON.parse(itemSrc);
-                    $(Elements.IMAGE_FROM_RESOURCE).attr('src', itemSrc);
+                if (!_.isUndefined(self.m_jData._url)) {
+                    setTimeout(function () {
+                        getObjectValue(0, 'getCachingPath("' + self.m_jData._url + '",' + self.m_cacheExpirationSec + ',' + self.m_purgedIfNotUsedSec + ')', function (itemSrc) {
+                            var imgSrc = JSON.parse(itemSrc);
+                            // alert(imgSrc);
+                            $(Elements.IMAGE_FROM_RESOURCE).attr('src', imgSrc);
+                        });
+                    }, 1000);
+                }
 
-                    getObjectValue(0, 'getCachingPath("' + self.m_jData._url + '",' + self.m_cacheExpirationSec + ',' + self.m_purgedIfNotUsedSec + ')', function (itemSrc) {
-                        $(Elements.IMAGE_FROM_URL).attr('src', itemSrc);
-                    });
-                });
+                if (!_.isUndefined(self.m_jData.Resource) && _.isUndefined(self.m_jData.Resource['hResource1'])) {
+                    setTimeout(function () {
+                        var hResource = parseInt(self.m_jData.Resource['_hResource1']);
+                        getObjectValue(0, 'getResourcePath("' + hResource + '")', function (itemSrc) {
+                            var imgSrc = JSON.parse(itemSrc);
+                            alert(imgSrc);
+                            $(Elements.IMAGE_FROM_URL).attr('src', imgSrc);
+                        });
+                    }, 2000);
+                }
+
+
             } catch (e) {
                 log('problem loading images ' + e);
             }
@@ -73,9 +83,9 @@ define(['jquery', 'backbone', 'text!templates/DiggArticle.html', 'TweenLite', 'S
          **/
         _listenSendEvents: function () {
             var self = this;
-            $(Elements.FIRE_NEXT_EVENT).on('click',function(){
+            $(Elements.FIRE_NEXT_EVENT).on('click', function () {
                 self._log('sending next event');
-                self._sendEvent('next', _.random(1,100));
+                self._sendEvent('next', _.random(1, 100));
             });
         },
 
