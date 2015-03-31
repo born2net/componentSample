@@ -60,7 +60,6 @@ define(['jquery', 'backbone', 'text!templates/DiggArticle.html', 'TweenLite', 'S
                         var hResource = parseInt(self.m_jData.Resource['_hResource1']);
                         getObjectValue(0, 'getResourcePath("' + hResource + '")', function (itemSrc) {
                             var imgSrc = JSON.parse(itemSrc);
-                            alert(imgSrc);
                             $(Elements.IMAGE_FROM_URL).attr('src', imgSrc);
                         });
                     }, 2000);
